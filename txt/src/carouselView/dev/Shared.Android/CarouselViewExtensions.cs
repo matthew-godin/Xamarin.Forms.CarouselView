@@ -437,12 +437,13 @@ namespace Xamarin.Forms.Platform
 		PhysicalLayoutManager _physicalLayout;
 		int _position;
 		bool _disposed;
-		#endregion
+        #endregion
 
-		public CarouselViewRenderer()
-		{
-			AutoPackage = false;
-		}
+        public CarouselViewRenderer(Context context) 
+            : base(context)
+        {
+            AutoPackage = false;
+        }
 
 		protected override void Dispose(bool disposing)
 		{
@@ -510,7 +511,7 @@ namespace Xamarin.Forms.Platform
 
 			LayoutManager.Reset(_position);
 
-			var adapter = new ItemViewAdapter(this);
+			var adapter = new ItemViewAdapter(this, Context);
 			adapter.RegisterAdapterDataObserver(new PositionUpdater(this));
 			Control.SetAdapter(adapter);
 		}
@@ -1126,7 +1127,7 @@ namespace Xamarin.Forms.Platform
 			#endregion
 
 			public CarouselViewHolder(View view, IVisualElementRenderer renderer)
-				: base(renderer.ViewGroup)
+				: base(renderer.View)
 			{
 				_visualElementRenderer = renderer;
 				_view = view;
@@ -1141,19 +1142,21 @@ namespace Xamarin.Forms.Platform
 		readonly IVisualElementRenderer _renderer;
 		readonly Dictionary<int, object> _typeByTypeId;
 		readonly Dictionary<object, int> _typeIdByType;
-		int _nextItemTypeId;
+        private readonly Context _context;
+        int _nextItemTypeId;
 		#endregion
 
-		public ItemViewAdapter(IVisualElementRenderer carouselRenderer)
+		public ItemViewAdapter(IVisualElementRenderer carouselRenderer, Context context)
 		{
 			_renderer = carouselRenderer;
 			_typeByTypeId = new Dictionary<int, object>();
 			_typeIdByType = new Dictionary<object, int>();
 			_nextItemTypeId = 0;
-		}
+            _context = context;
+        }
 
-		#region Private Members
-		ItemsView Element
+        #region Private Members
+        ItemsView Element
 		{
 			get
 			{
@@ -1193,7 +1196,7 @@ namespace Xamarin.Forms.Platform
 			var view = Controller.CreateView(type);
 
 			// create renderer for view
-			var renderer = Android.Platform.CreateRenderer(view);
+			var renderer = Android.Platform.CreateRendererWithContext(view, _context);
 			Android.Platform.SetRenderer(view, renderer);
 
 			// package renderer + view
