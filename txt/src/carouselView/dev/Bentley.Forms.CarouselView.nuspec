@@ -6,7 +6,7 @@
     <summary>Carousel View for Xamarin Forms</summary>
     <description>Carousel View identical to Xamarin.Forms.CarouselView with additional bug fixes</description>
     <tags>Xamarin Forms Carousel View</tags>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
     <authors>Bentley Systems, Incorporated</authors>
     <owners>Bentley Systems, Incorporated</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CarouselScrollListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CarouselViewHolder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CarouselViewRenderer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CarouselViewRenderer.PositionUpdater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DecoratedView.cs" />
