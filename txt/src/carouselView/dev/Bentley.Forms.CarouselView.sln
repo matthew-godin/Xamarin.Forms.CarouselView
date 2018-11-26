@@ -21,6 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bentley.Forms.CarouselView"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CarouselView.Shared.iOS", "Shared.iOS\CarouselView.Shared.iOS.shproj", "{F1D3B44D-18F9-43F4-945B-5DF6521626AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{E6560B4B-4E16-4C70-8FEE-910612ADCDE8}"
+	ProjectSection(SolutionItems) = preProject
+		Bentley.Forms.CarouselView.nuspec = Bentley.Forms.CarouselView.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared.Android\CarouselView.Shared.Android.projitems*{1887b841-6bfc-4ff6-89ec-9ab2409ab598}*SharedItemsImports = 4

@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.InteropServices;
 using Xamarin.Forms;
 
 // General Information about an assembly is controlled through the following 
@@ -13,4 +12,15 @@ using Xamarin.Forms;
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+[assembly: AssemblyVersion(VersionInfo.Version)]
+[assembly: AssemblyFileVersion(VersionInfo.Version)]
+
+
+namespace Xamarin.Forms
+{
+    internal static class VersionInfo
+    {
+        internal const string Version = "1.0.6";
+    }
+}
 
