@@ -88,15 +88,18 @@ namespace Xamarin.Forms.Platform
 			// adapter
 			InitializeAdapter();
 		}
-		void InitializeAdapter()
-		{
-			_position = Element.Position;
+        void InitializeAdapter()
+        {
+            _position = Element.Position;
 
-			LayoutManager.Reset(_position);
+            LayoutManager.Reset(_position);
 
-			var adapter = new ItemViewAdapter(this, Context);
-			adapter.RegisterAdapterDataObserver(new PositionUpdater(this));
-			Control.SetAdapter(adapter);
+            if (Adapter == null)
+            {
+                var adapter = new ItemViewAdapter(this, Context);
+                adapter.RegisterAdapterDataObserver(new PositionUpdater(this));
+                Control.SetAdapter(adapter);
+            }
 		}
 
 		ItemViewAdapter Adapter => (ItemViewAdapter)Control.GetAdapter();
