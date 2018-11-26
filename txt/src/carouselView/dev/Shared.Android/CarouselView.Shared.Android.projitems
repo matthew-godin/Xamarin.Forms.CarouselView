@@ -9,6 +9,20 @@
     <Import_RootNamespace>Xamarin.Forms.CarouselView.Shared.Android</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CarouselScrollListener.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CarouselViewExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CarouselViewRenderer.PositionUpdater.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DecoratedView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\NumericExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PointExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\RectangleExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TupleExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemViewAdapter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LayoutManagerBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MeasureSpecification.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PhysicalLayoutManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SeekAndSnapScroller.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Vector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VirtualLayoutManager.cs" />
   </ItemGroup>
 </Project>
