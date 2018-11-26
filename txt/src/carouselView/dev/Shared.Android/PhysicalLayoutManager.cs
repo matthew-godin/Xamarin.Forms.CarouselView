@@ -128,7 +128,7 @@ namespace Xamarin.Forms.Platform
 
             // low-fidelity change event; assume everything has changed. If adapter reports it has "stable IDs" then 
             // RecyclerView will attempt to synthesize high-fidelity change events: added, removed, moved, updated.
-            Reset(0);
+            Reset(_positionOrigin);
             RemoveAllViews();
         }
         public override void OnItemsAdded(RecyclerView recyclerView, int positionStart, int itemCount)
