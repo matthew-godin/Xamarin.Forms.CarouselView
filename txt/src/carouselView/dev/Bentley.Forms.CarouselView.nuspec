@@ -6,7 +6,7 @@
     <summary>Carousel View for Xamarin Forms</summary>
     <description>Carousel View identical to Xamarin.Forms.CarouselView with additional bug fixes</description>
     <tags>Xamarin Forms Carousel View</tags>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <authors>Bentley Systems, Incorporated</authors>
     <owners>Bentley Systems, Incorporated</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -19,6 +19,6 @@
   <files>
     <file src="Bentley.Forms.CarouselView\bin\release\netstandard2.0\Xamarin.Forms.CarouselView.dll" target="lib\netstandard2.0\Xamarin.Forms.CarouselView.dll" />
     <file src="Bentley.Forms.CarouselView.Android\bin\release\Xamarin.Forms.CarouselView.dll" target="lib\MonoAndroid10\Xamarin.Forms.CarouselView.dll" />
-    <file src="Bentley.Forms.CarouselView.iOS\bin\release\Xamarin.Forms.CarouselView.dll" target="lib\MonoTouch10\Xamarin.Forms.CarouselView.dll" />
+    <file src="Bentley.Forms.CarouselView.iOS\bin\release\Xamarin.Forms.CarouselView.dll" target="lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll" />
   </files>
 </package>
