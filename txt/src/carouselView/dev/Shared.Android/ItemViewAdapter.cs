@@ -8,21 +8,6 @@ namespace Xamarin.Forms.Platform
 {
     internal class ItemViewAdapter : RecyclerView.Adapter
     {
-        #region Private Definitions
-        class CarouselViewHolder : RecyclerView.ViewHolder
-        {
-            public CarouselViewHolder(View view, IVisualElementRenderer renderer)
-                : base(renderer.View)
-            {
-                VisualElementRenderer = renderer;
-                View = view;
-            }
-
-            public View View { get; }
-            public IVisualElementRenderer VisualElementRenderer { get; }
-        }
-        #endregion
-
         #region Fields
         readonly IVisualElementRenderer _renderer;
         readonly Dictionary<int, object> _typeByTypeId;
@@ -55,6 +40,8 @@ namespace Xamarin.Forms.Platform
                 return Element;
             }
         }
+
+        private IList<RecyclerView.ViewHolder> AllCreatedViewHolders { get; } = new List<RecyclerView.ViewHolder>();
         #endregion
 
         public override int ItemCount => Controller.Count;
@@ -84,8 +71,12 @@ namespace Xamarin.Forms.Platform
             var renderer = Android.Platform.CreateRendererWithContext(view, _context);
             Android.Platform.SetRenderer(view, renderer);
 
+            var newHolder = new CarouselViewHolder(view, renderer);
+
+            AllCreatedViewHolders.Add(newHolder);
+
             // package renderer + view
-            return new CarouselViewHolder(view, renderer);
+            return newHolder;
         }
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
@@ -93,6 +84,19 @@ namespace Xamarin.Forms.Platform
 
             var item = Controller.GetItem(position);
             Controller.BindView(carouselHolder.View, item);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                foreach (var holder in AllCreatedViewHolders)
+                {
+                    holder.Dispose();
+                }
+                AllCreatedViewHolders.Clear();
+            }
+            base.Dispose(disposing);
         }
     }
 }

@@ -34,6 +34,8 @@ namespace Xamarin.Forms.Platform
 				if (Element != null)
 					Controller.CollectionChanged -= OnCollectionChanged;
 
+                Adapter?.Dispose();
+
 				RemoveAllViews();
 			}
 
