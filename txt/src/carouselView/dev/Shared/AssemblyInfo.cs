@@ -20,7 +20,7 @@ namespace Xamarin.Forms
 {
     internal static class VersionInfo
     {
-        internal const string Version = "1.0.6";
+        internal const string Version = "1.0.7";
     }
 }
 
