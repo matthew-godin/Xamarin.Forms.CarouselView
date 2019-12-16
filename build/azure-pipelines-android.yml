@@ -13,16 +13,16 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreSolution: 'Bentley.Forms.CarouselView.sln'
+    restoreSolution: '**/Bentley.Forms.CarouselView.sln'
     feedsToUse: 'select'
 - task: MSBuild@1
   inputs:
-    solution: 'Bentley.Forms.CarouselView.sln'
+    solution: '**/Bentley.Forms.CarouselView.sln'
     configuration: '$(BuildConfiguration)'
 - task: NuGetCommand@2
   inputs:
     command: 'pack'
-    packagesToPack: 'Bentley.Forms.CarouselView.nuspec'
+    packagesToPack: '**/Bentley.Forms.CarouselView.nuspec'
     versioningScheme: 'off'
 
 - task: PublishBuildArtifacts@1
